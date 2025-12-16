@@ -20,12 +20,12 @@
             <!-- FORMULARIO -->
             <div class="card bg-secondary text-white mb-4 shadow">
                 <div class="card-body">
-                    <h5>Ingreso de estudiante</h5>
+                    <h5>Ingrese nota y apellido del estudiante</h5>
                     <div class="input-group">
-                        <button class="btn btn-success" id="btn_cargar">CARGAR</button>
-                        <input type="number" id="txt_nota" class="form-control" placeholder="NOTA (0-10)" min="0"
-                            max="10">
+                        <input type="number" id="txt_nota" class="form-control" placeholder="NOTA" min="5"
+                            max="10" required>
                         <input type="text" id="txt_apellido" class="form-control" placeholder="APELLIDO">
+                        <button class="btn btn-success" id="btn_cargar">CARGAR</button>
                     </div>
                 </div>
             </div>
@@ -41,41 +41,51 @@
                     </tr>
                 </thead>
                 <tbody id="tabla_estudiantes">
-                    <!-- filas dinámicas -->
+                    
                 </tbody>
             </table>
 
             <!-- RESULTADOS -->
-            <div class="row text-center mt-4">
-
-                <div class="col-md-4 mb-3">
-                    <div class="card bg-success text-white shadow">
-                        <div class="card-body">
-                            <h5>Aprobados</h5>
-                            <p class="fs-2 fw-bold" id="total_aprobados">0</p>
+            <div class="row text-center mt-4 g-3">
+            
+                <!-- REPROBADOS -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-lg h-100">
+                        <div class="card-body bg-danger text-white rounded">
+                            <div class="mb-2 fs-1">❌</div>
+                            <h6 class="text-uppercase fw-semibold">Reprobados</h6>
+                            <p class="display-5 fw-bold mb-1" id="total_reprobados">0</p>
+                            <small class="opacity-75">Rango de notas: 0 – 4</small>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4 mb-3">
-                    <div class="card bg-warning text-dark shadow">
-                        <div class="card-body">
-                            <h5>Supletorio</h5>
-                            <p class="fs-2 fw-bold" id="total_supletorios">0</p>
+            
+                <!-- SUPLETORIO -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-lg h-100">
+                        <div class="card-body bg-warning text-dark rounded">
+                            <div class="mb-2 fs-1">⚠️</div>
+                            <h6 class="text-uppercase fw-semibold">Supletorio</h6>
+                            <p class="display-5 fw-bold mb-1" id="total_supletorios">0</p>
+                            <small class="opacity-75">Rango de notas: 5 – 6</small>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4 mb-3">
-                    <div class="card bg-danger text-white shadow">
-                        <div class="card-body">
-                            <h5>Reprobados</h5>
-                            <p class="fs-2 fw-bold" id="total_reprobados">0</p>
+            
+                <!-- APROBADOS -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-lg h-100">
+                        <div class="card-body bg-success text-white rounded">
+                            <div class="mb-2 fs-1">✅</div>
+                            <h6 class="text-uppercase fw-semibold">Aprobados</h6>
+                            <p class="display-5 fw-bold mb-1" id="total_aprobados">0</p>
+                            <small class="opacity-75">Rango de notas: 7 – 10</small>
                         </div>
                     </div>
                 </div>
-
+            
             </div>
+
 
             <!-- PROMEDIO -->
             <div class="card bg-secondary text-white mt-4 shadow">
